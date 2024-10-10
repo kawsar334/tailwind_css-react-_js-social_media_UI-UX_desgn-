@@ -5,7 +5,7 @@ const Leftbar = ({ openLeft }) => {
     // const styls = `${openLeft ?"vissible"}`
 
     return (
-        <div className={` no_scrollbar absolute w-[100%] md:w-[360px] bg-[white] z-10 h-[calc(100vh-70px)] left-0 overflow-scroll top-[100px] md:top-[70px]  justify-center items-center ${openLeft ? "flex" : "hidden md:flex"}  overflow-auto`}>
+        <div className={` no_scrollbar absolute w-[100%] md:w-[360px] bg-[white]  h-[calc(100vh-70px)] left-0 overflow-scroll top-[100px] md:top-[70px]  justify-center items-center ${openLeft ? "flex" : "hidden md:flex"}  overflow-auto`}>
             <div className='w-[80%] h-full  sticky left-0 top-0'>
                 <ul className='w-full list-none  flex flex-col justify-start items-start  gap-4'>
                     <li className='w-full flex justify-start items-start gap-3 border-b mt-8 border-y  '>

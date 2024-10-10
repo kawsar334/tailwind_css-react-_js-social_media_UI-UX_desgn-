@@ -7,15 +7,25 @@ import Profile from "./pages/profile/Profile"
 import Message from "./pages/message/Message"
 
 import { Routes, Route } from "react-router-dom"
+import Start from './pages/start/Start';
+import Notification from './components/notification/Notification';
+import NotFound from './pages/notfound/NotFound';
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Start />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/notifications/:id' element={<Notification />} />
+
+
         <Route path='/register' element={<Register />} />
+
         <Route path='/login' element={<Login />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile/:id' element={<Profile />} />
         <Route path='/message' element={<Message />} />
+        <Route path='*' element={<NotFound />} />
+
 
 
       </Routes>

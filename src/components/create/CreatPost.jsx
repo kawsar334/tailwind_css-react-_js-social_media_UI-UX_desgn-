@@ -25,9 +25,9 @@ const CreatePost = () => {
     }
 
     return (
-        <div className='relative w-full'>
-            <div className='w-[90%] flex justify-start items-center gap-4 m-auto'>
-                <img src={posts[3].img} alt="" className='w-[40px] h-[40px] cursor-pointer rounded-[50%] border-[3px] border-[lightgray]' />
+        <div className='relative bg-[white] w-full mt-5 flex justify-center items-center z-20'>
+            <div className='w-[80%] flex justify-start items-center gap-4 m-auto'>
+                <img src={"https://www.w3schools.com/howto/img_avatar.png"} alt="" className='w-[40px] h-[40px] cursor-pointer rounded-[50%] border-[3px] border-[lightgray]' />
                 <input 
                     type="text" 
                     placeholder="what's on your mind, Kawsar?" 

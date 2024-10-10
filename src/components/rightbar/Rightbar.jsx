@@ -1,47 +1,50 @@
 import React from 'react';
+import Notification from '../notification/Notification';
+import FriendList from '../friendlist/FriendList';
 
 const Rightbar = ({ openRight }) => {
   return (
-    <div className={`w-full md:w-[360px] bg-[white] absolute right-0 top-[110px] md:top-[70px] h-[calc(100vh-80px)] ${openRight ? "flex" : "hidden md:flex"} flex-col p-4`}>
-      <h2 className="text-white text-xl font-bold mb-4">Suggested Pages</h2>
-      <div className="flex flex-col gap-4">
-        <div className="bg-white p-2 rounded shadow">
-          <h3 className="text-teal-800 font-semibold">Page 1</h3>
-          <p className="text-[#555]">Description for Page 1</p>
-        </div>
-        <div className="bg-white p-2 rounded shadow">
-          <h3 className="text-teal-800 font-semibold">Page 2</h3>
-          <p className="text-[#555]">Description for Page 2</p>
-        </div>
-        <div className="bg-white p-2 rounded shadow">
-          <h3 className="text-teal-800 font-semibold">Page 3</h3>
-          <p className="text-[#555]">Description for Page 3</p>
-        </div>
-      </div>
-      <h2 className="text-white text-xl font-bold mt-6 mb-4">Friends</h2>
-      <div className="flex flex-col gap-4">
-        <div className="bg-white p-2 rounded shadow flex items-center gap-2">
-          <img src="https://via.placeholder.com/40" alt="Friend 1" className="rounded-full" />
-          <div>
-            <h3 className="text-teal-800 font-semibold">Friend 1</h3>
-            <p className="text-[#555]">Online</p>
+    <div className=' p-3 overflow-auto no_scrollbar w-full  '>
+
+      {/* <Notification/> */}
+
+      <div className='card shadow p-3 w-full'>
+
+      <h2 className=" text-xl font-bold mb-1  border-y shadow py-2 rounded px-1 ">Suggested Friends</h2>
+         
+        <div className='w-full  py-4 px-1 flex justify-start items-start flex-col gap-2'>
+          <div className="mb-4">
+            <p className="font-medium py-1">kawsar firoz</p>
+            <p className='text-[12px] text-[lightgray] '>2 Mutual friend</p>
+            <button className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition-all">
+              Add Friend
+            </button>
           </div>
-        </div>
-        <div className="bg-white p-2 rounded shadow flex items-center gap-2">
-          <img src="https://via.placeholder.com/40" alt="Friend 2" className="rounded-full" />
-          <div>
-            <h3 className="text-teal-800 font-semibold">Friend 2</h3>
-            <p className="text-[#555]">Offline</p>
+          <div className="mb-4">
+            <p className="font-medium py-1">kawsar firoz</p>
+            <p className='text-[12px] text-[lightgray] '>2 Mutual friend</p>
+            <button className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition-all">
+              Add Friend
+            </button>
           </div>
-        </div>
-        <div className="bg-white p-2 rounded shadow flex items-center gap-2">
-          <img src="https://via.placeholder.com/40" alt="Friend 3" className="rounded-full" />
-          <div>
-            <h3 className="text-teal-800 font-semibold">Friend 3</h3>
-            <p className="text-[#555]">Online</p>
+          <div className="mb-4">
+            <p className="font-medium py-1">kawsar firoz</p>
+            <p className='text-[12px] text-[lightgray] '>2 Mutual friend</p>
+            <button className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition-all">
+              Add Friend
+            </button>
           </div>
-        </div>
-      </div>
+     </div>
+
+     {/*  */}
+
+        <h2 className=" text-xl font-bold mb-1  border-y shadow py-2 rounded px-1 ">Suggested Friends</h2>
+        <h2 className=" text-xl font-bold mb-1  border-y shadow py-2 rounded px-1 ">Suggested Friends</h2>
+
+
+     {/*  */}
+     
+      </div>    
     </div>
   );
 };
