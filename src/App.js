@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className='overflow-x-hidden'>
       <Routes>
+        <Route path='/message' element={<Message />} />
         <Route path='/' element={<Start />} />
         <Route path='/home' element={<Home />} />
         <Route path='/notifications/:id' element={<Notification />} />
@@ -23,7 +24,6 @@ const App = () => {
 
         <Route path='/login' element={<Login />} />
         <Route path='/profile/:id' element={<Profile />} />
-        <Route path='/message' element={<Message />} />
         <Route path='*' element={<NotFound />} />
 
 

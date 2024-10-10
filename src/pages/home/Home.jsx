@@ -11,6 +11,7 @@ import Strory from '../../components/story/Strory'
 // import { posts } from '../../components/data/data'
 import Footer from '../../components/footer/Footer';
 import FriendList from '../../components/friendlist/FriendList';
+import Message from '../message/Message';
 
 
 const Home = () => {
@@ -69,6 +70,9 @@ const Home = () => {
 
           </div>
           <CreatPost />
+
+
+          {/* <Message/> */}
           <div className=' w-full   my-3 flex justify-start items-start flex-col '>
             {openFriendList&& <FriendList />}
            {openStory && <Strory posts={posts} />}
