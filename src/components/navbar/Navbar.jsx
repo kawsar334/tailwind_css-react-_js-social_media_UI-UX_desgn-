@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from "react-router-dom"
 
-const Navbar = ({ openLeft, setOpenLeft, openRight, setOpenRight, openFeed, setOpenFeed }) => {
+const Navbar = () => {
   const route = useLocation().pathname;
 
   const [openSearch, setOpenSearch] = useState(false)
@@ -31,8 +31,8 @@ const Navbar = ({ openLeft, setOpenLeft, openRight, setOpenRight, openFeed, setO
           <ul
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow  ">
-            <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/message">Message</NavLink></li>
             <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/home">Home</NavLink></li>
+            <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/message">Message</NavLink></li>
             <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/login">Login</NavLink></li>
             <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/register">Register</NavLink></li>
             <li className='my-2  '><NavLink className="hover:text-[white] text-[#1877F2] py-3" to="/profile/:id">profile</NavLink></li>

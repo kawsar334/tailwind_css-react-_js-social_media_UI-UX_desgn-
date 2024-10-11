@@ -107,7 +107,7 @@ const Message = () => {
         </div>
       </div>
       {/* chat start here */}
-      <div className='h-[500px] overflow-y-auto w-full md:w-[60%] m-auto px-5 border-[5px] rounded-[20px]  no_scrollbar'>
+      <div className=' overflow-y-auto w-full md:w-[60%] m-auto px-5 border-[5px] rounded-[20px]  no_scrollbar' style={{ height:'calc(100vh - 70px)'}}>
       <div className="chat chat-start">
         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="" className='w-[20px] h-[20px] rounded-full object-cover' />
         <div className="chat-bubble chat-bubble-primary">What kind of nonsense is this</div>
