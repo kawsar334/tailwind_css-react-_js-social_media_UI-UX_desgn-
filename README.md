@@ -1,8 +1,6 @@
 
 # Social Media app,  facebook clone .
 
--  Project structure : [click here](https://docs.google.com/presentation/d/1TkPNA5qiVmhk8yDfFHUQdej5ipEm5iS9JMwRLax2q_w/edit?usp=sharing)
-
  ## run project  
  ### `npm start`
  
