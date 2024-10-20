@@ -14,6 +14,7 @@ const Home = () => {
   const [openPost, setopenPost] = useState(true);
   const [openStory, setopenStory] = useState(false);
   const [openFriendList, setopenFriendList] = useState(false);
+  const [data, setData] =useState([])
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
@@ -52,6 +53,23 @@ const Home = () => {
   };
 
 
+  useEffect(() => {
+    const GetData = async () => {
+      try {
+        const response = await fetch("https://social-media-backend-ochre.vercel.app/api/post/posts?new=true");
+        const data = await response.json();
+        // setPosts(data.meals);
+        setData(data.data)
+        
+      } catch (err) {
+        console.log(err);
+       
+      }
+    };
+    GetData();
+
+  }, []);
+
 
   return (
     <div className="h-max">
@@ -83,7 +101,14 @@ const Home = () => {
             </button>
           </div>
           <CreatPost />
-      
+          {
+            data.map((item)=>(
+              <>
+              <h1 key={item?._id}>{item?.desc}</h1>
+              <img  src={item?.img}/>
+              </>
+            ))
+          }
 
 
 
