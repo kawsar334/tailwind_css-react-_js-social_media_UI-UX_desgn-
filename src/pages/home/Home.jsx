@@ -51,6 +51,8 @@ const Home = () => {
     setopenFriendList(true);
   };
 
+
+
   return (
     <div className="h-max">
       <Navbar />
@@ -81,6 +83,9 @@ const Home = () => {
             </button>
           </div>
           <CreatPost />
+      
+
+
 
           {/* Loading Spinner */}
           {loading ? (
