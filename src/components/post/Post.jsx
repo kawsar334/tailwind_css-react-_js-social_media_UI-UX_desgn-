@@ -17,7 +17,7 @@ const Post = ({posts}) => {
     );
   return (
     <div className=' overflow-y-auto mt-10 w-full  flex flex-col justify-start items-start gap-3 p-4 '>
-        {posts.map((item)=>(
+        {posts && posts.map((item)=>(
             <div className='w-full border p-5 rounded-[10px]'>
                 <div className='w-full flex items-start flex-col gap-3 cursor-pointer '>
                     <h1 className='text-3xl font-semibold '>{item?.desc || "Not Found "}</h1>

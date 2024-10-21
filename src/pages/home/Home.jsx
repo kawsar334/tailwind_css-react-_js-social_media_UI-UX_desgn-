@@ -19,8 +19,7 @@ const Home = () => {
   const [openFriendList, setopenFriendList] = useState(false);
   const [posts, setPosts] = useState([]);
   // const [loading, setLoading] = useState(true);
-  const { data, loading, error } = useFetch(`${URL}post/posts`)
-
+  const { data, loading, error } = useFetch(`${URL}post/posts?new=true`)
 
  
   const showNewsFeed = () => {
@@ -123,7 +122,7 @@ const Home = () => {
             <div className="w-full my-3 flex justify-start items-start flex-col">
               {openFriendList && <FriendList />}
               {openStory && <Strory posts={data.data} />}
-              {openPost && <Post posts={data.data} />}
+              {openPost && <Post posts={data?.data} />}
             </div>
           )}
         </div>
