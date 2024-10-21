@@ -22,21 +22,7 @@ const Home = () => {
   const { data, loading, error } = useFetch(`${URL}post/posts`)
 
 
-  // useEffect(() => {
-  //   const GetData = async () => {
-  //     try {
-  //       const response = await fetch(`${URL}post/posts`);
-  //       const data = await response.json();
-  //       setPosts(data.data);
-  //       setLoading(false);
-  //     } catch (err) {
-  //       console.log(err);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   GetData();
-  // }, []);
-
+ 
   const showNewsFeed = () => {
     setopenPost(true);
     setopenStory(false);

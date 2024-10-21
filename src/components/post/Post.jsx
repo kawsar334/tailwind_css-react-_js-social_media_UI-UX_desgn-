@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Post = ({posts, loading}) => {
-    console.log(loading)
+const Post = ({posts}) => {
 
     const RenderSkeleton = () => (
         <div className="w-full p-4">
