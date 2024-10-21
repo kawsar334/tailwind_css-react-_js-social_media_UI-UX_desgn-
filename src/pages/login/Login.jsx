@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../components/alerts/Alert';
+import { authUrl } from '../../utils/Utils';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,8 +14,13 @@ const Login = () => {
   // Login functionality
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      setErrorMessage('Please enter both email and password.');
+      return;
+    }
+
     try {
-      const response = await fetch(`${URL}auth/login`, {
+      const response = await fetch(authUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
