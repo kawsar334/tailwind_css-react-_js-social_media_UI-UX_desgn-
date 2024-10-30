@@ -1,37 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
 
-const QuranLanguages = () => {
-    const [language, setLanguage] = useState([]);
+const App = () => {
+  const [board, setBoard] = useState(Array(9).fill(null)); // 9 squares for the 3x3 board
+  const [isXNext, setIsXNext] = useState(true); // X starts first
 
-    useEffect(() => {
-        const fetchQuran = async () => {
-            try {
-                const response = await axios.get("https://mp3quran.net/api/v3/languages");
-                console.log(response.data);  // Log entire response to see the structure
-                const filteredLanguages = response.data.language.filter((lang) =>
-                    ["Arabic", "English", "Bengali", "Urdu", "Hindi"].includes(lang.language)
-                );
-                setLanguage(filteredLanguages);
-            } catch (err) {
-                console.log(err);
-            }
-        };
+  const handleClick = (index) => {
+    // If the square is already filled or the game is over, return
+    if (board[index] || calculateWinner(board)) return;
 
-        fetchQuran();
-    }, []);
-    // console.log(language)
+    const newBoard = [...board];
+    newBoard[index] = isXNext ? "X" : "O";
+    setBoard(newBoard);
+    setIsXNext(!isXNext); // Toggle between X and O
+  };
 
-    return (
-        <div>
-            <h1>Available Languages</h1>
-            <ul>
-                {language.map((lang) => (
-                    <li key={lang.id}>{lang.language}</li>
-                ))}
-            </ul>
-        </div>
-    );
+  const winner = calculateWinner(board);
+  const status = winner ? `Winner: ${winner}` : `Next player: ${isXNext ? "X" : "O"}`;
+
+  const handleReset = () => {
+    setBoard(Array(9).fill(null)); // Reset board
+    setIsXNext(true); // X starts first
+  };
+
+  return (
+    <div className="game">
+      <h1>Tic-Tac-Toe</h1>
+      <div className="status">{status}</div>
+      <div className="board">
+        {board.map((value, index) => (
+          <Square key={index} value={value} onClick={() => handleClick(index)} />
+        ))}
+      </div>
+      <button className="reset" onClick={handleReset}>
+        Reset Game
+      </button>
+    </div>
+  );
 };
 
-export default QuranLanguages;
+// Square component for individual squares
+const Square = ({ value, onClick }) => {
+  return (
+    <button className="square" onClick={onClick}>
+      {value}
+    </button>
+  );
+};
+
+// Calculate the winner of the game
+const calculateWinner = (squares) => {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (let line of lines) {
+    const [a, b, c] = line;
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+};
+
+export default App;

@@ -8,9 +8,11 @@
 //     : 'https://social-media-backend-ochre.vercel.app/api/'; // Production URL
 
 // export default URL;
-const URL = `https://social-media-backend-ochre.vercel.app/api/login`;
+// const URL = `https://social-media-backend-ochre.vercel.app/api`;
+// https://social-media-backend-ochre.vercel.app/api/
+const URL = `https://social-media-backend-ochre.vercel.app/api`
 
-export const authUrl = "https://tailwind-css-react-js-social-media-ui-ux-desgn-qc6e.vercel.app/api/auth/"
+export const authUrl = "https://social-media-backend-ochre.vercel.app/api/auth/login"
 
 export default URL;
 

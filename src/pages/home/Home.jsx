@@ -19,9 +19,10 @@ const Home = () => {
   const [openFriendList, setopenFriendList] = useState(false);
   const [posts, setPosts] = useState([]);
   // const [loading, setLoading] = useState(true);
-  const { data, loading, error } = useFetch(`${URL}post/posts?new=true`)
+  const { data, loading, error } = useFetch(`${URL}/post/posts`)
 
  
+  console.log(data)
   const showNewsFeed = () => {
     setopenPost(true);
     setopenStory(false);
@@ -65,6 +66,7 @@ const Home = () => {
 
   return (
     <div className="h-max">
+
       <Navbar />
       {LoginMessage && (
         <div className="flex justify-center items-center my-4">

@@ -11,4 +11,3 @@ export const posts = [
     { id: 10, userId: 110, title: 'Post Title 10', desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus ex sequi magnam, atque ullam porro voluptatem provident ducimus voluptates delectus, ipsa deleniti nesciunt, minus vitae cupiditate pariatur quisquam distinctio a! 10.', img: 'https://cdn.freepixel.com/preview/free-vector-graphic-vector-3d-illustration-of-laptop-with-binary-digits-01-on-shiny-blurred-background-for-coding-or-pro-preview-110106383.jpg' }
 ];
 
-console.log(posts);
