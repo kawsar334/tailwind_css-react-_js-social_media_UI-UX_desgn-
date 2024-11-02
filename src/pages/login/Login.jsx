@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch(authUrl, {
+      const response = await fetch("https://social-media-backend-ochre.vercel.app/api/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

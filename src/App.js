@@ -10,6 +10,8 @@ import { Routes, Route } from "react-router-dom"
 import Start from './pages/start/Start';
 import Notification from './components/notification/Notification';
 import NotFound from './pages/notfound/NotFound';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
@@ -29,6 +31,7 @@ const App = () => {
 
 
       </Routes>
+      <ToastContainer />
     </div>
   )
 }
